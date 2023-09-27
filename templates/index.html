@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>IP Information</h1>
+    </header>
+    <main>
+        <div class="input-container">
+            <form id="ip-form" method="POST" action="/fetch_ip_info">
+                <label for="ip-address">Enter IP Address:</label>
+                <input type="text" id="ip-address" name="ip_address" placeholder="Enter IP Address">
+                <button type="submit">Fetch Info</button>
+            </form>
+        </div>
+        <div id="result-container" class="hidden">
+            <h2>IP Details:</h2>
+            <p><strong>IP Address:</strong> <span id="ip-info"></span></p>
+            <p><strong>ISP:</strong> <span id="isp"></span></p>
+            <p><strong>ASN:</strong> <span id="asn"></span></p>
+            <p><strong>City:</strong> <span id="city"></span></p>
+            <p><strong>Region:</strong> <span id="region"></span></p>
+            <p><strong>Country:</strong> <span id="country"></span></p>
+            <p><strong>Location:</strong> <span id="location"></span></p>
+        </div>
+        <div id="error-container" class="hidden">
+            <p id="error-message"></p>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
